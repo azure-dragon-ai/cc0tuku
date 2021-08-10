@@ -1,0 +1,166 @@
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+//Bootstrap-icons
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+
+/* universal */
+
+body {
+  font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* header */
+
+.navbar-static-top {
+  border-color: #e7e7e7;
+  background-color: #fff;
+  box-shadow: 0px 1px 11px 2px rgba(42, 42, 42, 0.1);
+  border-top: 4px solid #00b5ad;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+
+/* Sticky footer styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #000;
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    p {
+      margin: 19px 0;
+      color: #c1c1c1;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.box{
+    overflow: hidden;
+    position: relative;
+    margin-bottom:20px;
+  }
+  .box:before{
+    content: "";
+    width: 0;
+    height: 60px;
+    background: #000;
+    padding: 14px 18px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    opacity: 0;
+    transition: all 500ms cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+  }
+  .box:hover:before{
+    width: 100%;
+    height: 60px;
+    left: 0;
+    opacity: 0.3;
+  }
+  .box img{
+    width: 100%;
+    height: auto;
+  }
+  .box .box-content{
+    width: 100%;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .box .user{
+    line-height: 30px;
+    text-transform: uppercase;
+    margin: 0;
+    margin-left:15px;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+  }
+  .user img {
+    width: 15%;
+    height: auto;
+    max-width: 60px;
+  }
+  .box .post{
+    font-size: 12px;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+  }
+
+  .box .down {
+    float:right;
+    margin-right: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+  }
+
+  .box:hover .down {
+    opacity: 1;
+    margin-top: 20px;
+    transition-delay: 0.7s;
+  }
+
+  .box .fav {
+    float:right;
+    margin-right: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: all 0.5s ease 0s;
+  }
+
+  .box .fav a{
+    color: #fff;
+  }
+
+  .box .fav a:hover {
+    color: #fff;
+  }
+
+  .box:hover .fav {
+    opacity: 1;
+    margin-top: 20px;
+    transition-delay: 0.7s;
+  }
+
+  .box:hover .user,
+  .box:hover .post{
+    opacity: 1;
+    transition-delay: 0.7s;
+  }
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+  
