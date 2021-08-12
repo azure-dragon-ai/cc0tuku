@@ -8,6 +8,8 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Jobs\SendRegisterUserEmail;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -69,5 +71,22 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    }
+
+    /**
+    * Handle a registration request for the application.
+    *
+    * @param Request $request
+    *
+    * @return \Illuminate\Http\Response
+    */
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+        $user = $this->create($request->all());
+        //队列job发送邮件
+        dispatch(new SendRegisterUserEmail($user));
+        $this->guard()->login($user);
+        return $this->registered($request, $user)?: redirect($this->redirectPath());
     }
 }

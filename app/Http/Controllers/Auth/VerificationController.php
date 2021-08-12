@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\VerifiesEmails;
+use Illuminate\Http\Request;
+use App\Jobs\SendRegisterUserEmail;
 
 class VerificationController extends Controller
 {
@@ -38,5 +40,18 @@ class VerificationController extends Controller
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+    }
+
+    /**
+     * 重新发送邮件
+     */ 
+    public function resend(Request $request)
+    {
+      if ($request->user()->hasVerifiedEmail()) {
+          return redirect($this->redirectPath());
+      }
+      //队列job发送邮件
+      dispatch(new SendRegisterUserEmail($request->user()));
+      return back()->with('resent', true);
     }
 }

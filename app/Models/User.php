@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Jobs\SendResetPasswordEmail;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -46,6 +47,18 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function images(){
         return $this->hasMany('\App\Models\Image');
+    }
+
+    /**
+    * Send the password reset notification.
+    *
+    * @param  string $token
+    *
+    * @return void
+    */
+    public function sendPasswordResetNotification($token)
+    {
+        dispatch(new SendResetPasswordEmail($this, $token));
     }
 
 }
