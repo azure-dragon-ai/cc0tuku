@@ -13,19 +13,19 @@ class Image extends Model
 	 */ 
 	
 	protected function getThumbAttribute($value){
-		return "https://photos.cc0tuku.com/".$value;
+		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
 	}
 
 	protected function getThumb1920Attribute($value){
-		return "https://photos.cc0tuku.com/".$value;
+		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
 	}
 
 	protected function getThumb1280Attribute($value){
-		return "https://photos.cc0tuku.com/".$value;
+		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
 	}
 
 	protected function getThumb640Attribute($value){
-		return "https://photos.cc0tuku.com/".$value;
+		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
 	}
 
 	/**
