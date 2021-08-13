@@ -64,11 +64,11 @@ return [
 
         'oss' => [
             'driver'     => 'oss',
-            'access_id' => env('OSS_ACCESS_ID', 'LTAIL8WvbExzHnKB'),
-            'access_key' => env('OSS_ACCESS_KEY', '4QSctByP8E48UZT7vLA0pUW6Q8UfM7'),
-            'bucket' => env('OSS_BUCKET', 'cc0tuku'),
-            'endpoint' => env('OSS_ENDPOINT', 'oss-cn-beijing.aliyuncs.com'),//不要用CName,经过测试，官方SDK实现不靠谱
-            'url' => env('OSS_URL','http://photos.cc0tuku.com'),//CNAME 写这里，可以是域名绑定或者CDN地址 如 https://www.bbb.com 末尾不要斜杠
+            'access_id' => env('OSS_ACCESS_ID'),
+            'access_key' => env('OSS_ACCESS_KEY'),
+            'bucket' => env('OSS_BUCKET'),
+            'endpoint' => env('OSS_ENDPOINT'),//不要用CName,经过测试，官方SDK实现不靠谱
+            'url' => env('OSS_URL'),//CNAME 写这里，可以是域名绑定或者CDN地址 如 https://www.bbb.com 末尾不要斜杠
             'prefix' => env('OSS_PREFIX', ''), // 这个文件路径前缀，如果上传的内容全部在子目录就填写，否则为空
             'security_token' => null,
             'proxy' => null,
