@@ -66,9 +66,9 @@ class User extends Authenticatable implements MustVerifyEmail
      */ 
     protected function getAvatarAttribute($value){
         if($value==null){
-            return "http://photos.cc0tuku.com/avatars/default.jpg";
+            return "https://photos.cc0tuku.com/avatars/default.jpg";
         }else{
-            return "http://photos.cc0tuku.com/".$value;
+            return "https://photos.cc0tuku.com/".$value;
         }
     }
 

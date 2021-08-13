@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
     <div class="box-content text-truncate">
-        <img src="/{{ $image->user->avatar }}" style="height: 60px; width:60px;" class="rounded-circle">
+        <img src="{{ $image->user->avatar }}" style="height: 60px; width:60px;" class="rounded-circle">
         {{ $image->user->name }}
     </div>
   </div>

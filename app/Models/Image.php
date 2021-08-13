@@ -13,19 +13,19 @@ class Image extends Model
 	 */ 
 	
 	protected function getThumbAttribute($value){
-		return "http://photos.cc0tuku.com/".$value;
+		return "https://photos.cc0tuku.com/".$value;
 	}
 
 	protected function getThumb1920Attribute($value){
-		return "http://photos.cc0tuku.com/".$value;
+		return "https://photos.cc0tuku.com/".$value;
 	}
 
 	protected function getThumb1280Attribute($value){
-		return "http://photos.cc0tuku.com/".$value;
+		return "https://photos.cc0tuku.com/".$value;
 	}
 
 	protected function getThumb640Attribute($value){
-		return "http://photos.cc0tuku.com/".$value;
+		return "https://photos.cc0tuku.com/".$value;
 	}
 
 	/**

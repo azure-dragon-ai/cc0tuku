@@ -17,11 +17,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <div class="custom-file mb-3">
-                                    @if(Auth::user()->avatar)
-                                        <img src="/{{ Auth::user()->avatar }}" class="img-fluid img-thumbnail">
-                                    @else
-                                        <img src="/avatars/default.jpg" class="img-fluid img-thumbnail">
-                                    @endif
+                                    <img src="{{ Auth::user()->avatar }}" class="img-fluid img-thumbnail">
                                     <input type="file" name="avatar" id="validatedCustomFile" class="custom-file-input">
                                     <label class="custom-file text-center" for="validatedCustomFile" style="margin-top: -15px;"><strong>点击更新头像</strong></label>
                                 </div>
