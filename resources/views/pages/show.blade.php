@@ -59,7 +59,7 @@
   </div>
 </div>
 @push('pbl-js')
-<script src="http://danml.com/js/download2.js"></script>
+<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/download2.js"></script>
 <script type="text/javascript">
   function downImg(){
       var image_url = $("input[name='inlineRadioOptions']:checked").val();

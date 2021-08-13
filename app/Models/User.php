@@ -61,4 +61,15 @@ class User extends Authenticatable implements MustVerifyEmail
         dispatch(new SendResetPasswordEmail($this, $token));
     }
 
+    /**
+     * 设置头像地址
+     */ 
+    protected function getAvatarAttribute($value){
+        if($value==null){
+            return "http://photos.cc0tuku.com/avatars/default.jpg";
+        }else{
+            return "http://photos.cc0tuku.com/".$value;
+        }
+    }
+
 }

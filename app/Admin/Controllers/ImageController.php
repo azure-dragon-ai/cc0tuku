@@ -82,6 +82,7 @@ class ImageController extends Controller
         $grid = new Grid(new Image);
 
         $grid->id('ID');
+        $grid->desc('图片说明');
         $grid->lens('镜头');
         $grid->size('大小');
         $grid->resolution('分辨率');
@@ -136,7 +137,7 @@ class ImageController extends Controller
         $form->text('aspect_ratio', '宽高比');
         $form->text('colour', '颜色');
         //$form->text('user_id', '创建者');
-        $form->image('thumb', '缩略图');
+        $form->image('thumb', '缩略图')->removable();
         $form->radio('released', '发布状态')->options(['0' => '暂停发布', '1'=> '发布'])->default('0');
         // $form->display(trans('admin.created_at'));
         // $form->display(trans('admin.updated_at'));
