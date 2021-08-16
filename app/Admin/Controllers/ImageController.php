@@ -146,6 +146,9 @@ class ImageController extends Controller
         $form->text('colour', '颜色');
         //$form->text('user_id', '创建者');
         $form->image('thumb', '缩略图')->removable();
+        $form->image('thumb1920', '1920缩略图')->removable();
+        $form->image('thumb1280', '1280缩略图')->removable();
+        $form->image('thumb640', '640缩略图')->removable();
         $form->tags('keywords', '标签');
         $form->radio('released', '发布状态')->options(['0' => '暂停发布', '1'=> '发布'])->default('0');
         // $form->display(trans('admin.created_at'));

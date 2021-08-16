@@ -144,6 +144,7 @@ class UserController extends Controller
         $model->size = $request->get('size');
         $model->resolution = $request->get('resolution');
         $model->aspect_ratio = $request->get('aspect_ratio');
+        $model->keywords = $request->get('keywords');
         $model->released = 0;
         $model->user_id = Auth::user()->id;
         $model->save();

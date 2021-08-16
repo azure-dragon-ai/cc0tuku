@@ -18,28 +18,28 @@
             <div class="dropdown-divider"></div>
             <div class="form-group">
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="{{ $image->thumb }}" checked>
+                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio1" value="{{ $image->newthumb }}" checked>
                 <label class="form-check-label" for="inlineRadio1">
                   原始大小
                 </label>
               </div>
               <div class="dropdown-divider"></div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="{{ $image->thumb1920 }}">
+                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio2" value="{{ $image->newthumb1920 }}">
                 <label class="form-check-label" for="inlineRadio2">
                   1920px
                 </label>
               </div>
               <div class="dropdown-divider"></div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio3" value="{{ $image->thumb1280 }}">
+                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio3" value="{{ $image->newthumb1280 }}">
                 <label class="form-check-label" for="inlineRadio3">
                   1280px
                 </label>
               </div>
               <div class="dropdown-divider"></div>
               <div class="form-check">
-                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio4" value="{{ $image->thumb640 }}">
+                <input type="radio" class="form-check-input" name="inlineRadioOptions" id="inlineRadio4" value="{{ $image->newthumb640 }}">
                 <label class="form-check-label" for="inlineRadio4">
                   640px
                 </label>
@@ -55,7 +55,7 @@
 </div>
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-top:20px;">
-    <img src="{{ $image->thumb640 }}" class="img-fluid">
+    <img src="{{ $image->newthumb640 }}" class="img-fluid">
   </div>
 </div>
 @push('pbl-js')

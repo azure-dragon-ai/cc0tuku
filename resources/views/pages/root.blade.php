@@ -6,7 +6,7 @@
       <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 item">
         <div class="box">
           <a href="{{ route('image.show', ['id'=>$image->id]) }}">
-            <img src="{{ $image->thumb640 }}" data-src="{{ $image->thumb640 }}" class="img-fluid lazyload"/>
+            <img src="{{ $image->newthumb640 }}" data-src="{{ $image->newthumb640 }}" class="img-fluid lazyload"/>
           </a>
           <div class="box-content">
               <span class="user"> <img src="{{ $image->user->avatar }}" class="rounded-circle"></span>
@@ -17,7 +17,7 @@
                 <i class="bi-heart-fill" style="font-size: 1.2rem;color:red;"></i>
               </span> 
               <span class="fav">
-                <a href="#" onclick="downImg('{{ $image->thumb640 }}')"><i class="bi-download" style="font-size: 1.2rem;"></i></a>
+                <a href="#" onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download" style="font-size: 1.2rem;"></i></a>
               </span>           
           </div>
         </div>
