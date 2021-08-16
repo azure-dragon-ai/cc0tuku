@@ -13,6 +13,7 @@
         "intervention/image": "^2.6",
         "laravel-admin-ext/helpers": "1.*",
         "laravel/framework": "^8.40",
+        "laravel/horizon": "^5.7",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.0",
         "larva/laravel-flysystem-oss": "^1.0",

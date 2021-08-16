@@ -16,7 +16,13 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
-                                <input type="file" class="form-control-file" name="thumb" required>
+                                <img src="#" id="ImageShow" class="img-fluid" style="display: none;" />
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-3">
+                                <input type="file" class="form-control-file" id="chooseImage" name="thumb" required>
                                 @error('thumb')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -85,6 +91,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-3">
+                                <label for="keywords">标签</label>
+                                <input type="text" class="form-control" name="keywords" placeholder="多个标签请用英文,分割 如女人,帽子,唯美" autocomplete="off">
+                                @error('keywords')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-3">
                                 <button type="submit" class="btn btn-primary">
@@ -100,3 +118,16 @@
     </div>
 </div>
 @endsection
+@push('pbl-js')
+<script>
+$(function(){
+    $('#chooseImage').on('change', function() {
+         var filePath = $(this).val(),
+         fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
+         src = window.URL.createObjectURL(this.files[0]);
+         $('#ImageShow').css('display','block');
+         $('#ImageShow').attr('src', src); 
+    });
+});
+</script>
+@endpush

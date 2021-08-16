@@ -83,6 +83,14 @@ class ImageController extends Controller
 
         $grid->id('ID');
         $grid->desc('图片说明');
+        $grid->keywords('标签');
+        $grid->column('released', '发布状态')->display(function ($released) {
+            if($released){
+                return "<span style='display:block;background:green;width:60px;text-align:center;color:white;'>已发布</span>";
+            }else{
+                return "<span style='display:block;background:red;width:60px;text-align:center;color:white;'>未发布</span>";
+            }
+        });
         $grid->lens('镜头');
         $grid->size('大小');
         $grid->resolution('分辨率');
@@ -90,7 +98,7 @@ class ImageController extends Controller
         $grid->colour('颜色');
         // $grid->user_id('user_id');
         // $grid->thumb('thumb');
-        $grid->created_at('创建时间');
+        //$grid->created_at('创建时间');
         // $grid->updated_at(trans('admin.updated_at'));
 
         return $grid;
@@ -138,6 +146,7 @@ class ImageController extends Controller
         $form->text('colour', '颜色');
         //$form->text('user_id', '创建者');
         $form->image('thumb', '缩略图')->removable();
+        $form->tags('keywords', '标签');
         $form->radio('released', '发布状态')->options(['0' => '暂停发布', '1'=> '发布'])->default('0');
         // $form->display(trans('admin.created_at'));
         // $form->display(trans('admin.updated_at'));
