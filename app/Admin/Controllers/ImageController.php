@@ -82,15 +82,14 @@ class ImageController extends Controller
         $grid = new Grid(new Image);
 
         $grid->id('ID');
+        $grid->column('thumb640')->image('',150,150);
         $grid->desc('图片说明');
         $grid->keywords('标签');
-        $grid->column('released', '发布状态')->display(function ($released) {
-            if($released){
-                return "<span style='display:block;background:green;width:60px;text-align:center;color:white;'>已发布</span>";
-            }else{
-                return "<span style='display:block;background:red;width:60px;text-align:center;color:white;'>未发布</span>";
-            }
-        });
+        $states = [
+            'on'  => ['value' => 1, 'text' => '发布', 'color' => 'success'],
+            'off' => ['value' => 0, 'text' => '撤回', 'color' => 'danger'],
+        ];
+        $grid->column('released','发布状态')->switch($states);
         $grid->lens('镜头');
         $grid->size('大小');
         $grid->resolution('分辨率');
