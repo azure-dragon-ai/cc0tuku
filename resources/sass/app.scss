@@ -96,7 +96,6 @@ body {
   }
   .box .user{
     line-height: 30px;
-    text-transform: uppercase;
     margin: 0;
     margin-left:15px;
     opacity: 0;
@@ -109,7 +108,6 @@ body {
   }
   .box .post{
     font-size: 12px;
-    text-transform: capitalize;
     opacity: 0;
     transition: all 0.5s ease 0s;
   }

@@ -18,9 +18,10 @@
       <ul class="navbar-nav navbar-right">
         <!-- 登录注册链接开始 -->
         @guest
+        <li class="nav-item"><a class="nav-link" href="{{ route('image.license') }}"><strong>版权说明</strong></a></li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('image.request') }}" role="button">
-              <i class="bi-plus-lg img-responsive img-circle" style="font-size: 1rem;color:green;"></i>
+          <a class="btn btn-outline-success" href="{{ route('image.request') }}" role="button">
+              图片上传<span class="bi-arrow-up"></span>
           </a>
         </li>
         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>

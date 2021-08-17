@@ -55,4 +55,16 @@ class PagesController extends Controller
             ]
         );
     }
+
+    /**
+     * 网站版本权限说明
+     */ 
+    public function license()
+    {
+        return view('pages.license',
+            [
+                'title' => '版本说明'
+            ]
+        );
+    }
 }

@@ -31,3 +31,5 @@ Route::post('/image/', 'UserController@image')->name('image.update');
 
 Route::get('/photo/{id}', 'PagesController@show')->name('image.show');
 
+Route::get('/license/', 'PagesController@license')->name('image.license');
+
