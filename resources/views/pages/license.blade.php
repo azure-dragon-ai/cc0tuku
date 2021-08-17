@@ -93,7 +93,7 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">在社交媒体上分享</h5>
-                  <p class="card-text">在 Facebook、Instagram 或 YouTube 等社交媒体上发布引人入胜的真实图片来增加你的受众。</p>
+                  <p class="card-text">在微博、豆瓣、QQ空间等社交媒体上发布引人入胜的真实图片来增加你的受众。</p>
                 </div>
               </div>
             </div>
