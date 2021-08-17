@@ -9,7 +9,7 @@
             <img src="{{ $image->newthumb640 }}" data-src="{{ $image->newthumb640 }}" class="img-fluid lazyload"/>
           </a>
           <div class="box-content">
-              <span class="user"> <img src="{{ $image->user->avatar }}" class="rounded-circle"></span>
+              <span class="user"> <img src="{{ $image->user->avatar }}" class="rounded-circle" style="height: 45px; width: 45px;"></span>
               <span class="post">
                 {{ $image->user->name }}
               </span>

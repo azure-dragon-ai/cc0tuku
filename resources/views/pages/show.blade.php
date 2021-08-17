@@ -54,7 +54,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-top:20px;">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-top:20px;margin-bottom:20px;">
     <img src="{{ $image->newthumb640 }}" class="img-fluid">
   </div>
 </div>
