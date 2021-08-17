@@ -24,7 +24,7 @@ class PagesController extends Controller
             $res = Redis::get($cacheKey);
             $res = unserialize($res);
         } else {
-            $res = Image::orderBy('created_at', 'desc')->Released()->paginate(20,['*'],'page',$page);
+            $res = Image::orderBy('created_at', 'desc')->Released()->paginate(24,['*'],'page',$page);
             Redis::setex($cacheKey, 3600*mt_rand(1,24), serialize($res));
         }
         return view('pages.root', 
