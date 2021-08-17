@@ -97,6 +97,7 @@ class UserController extends Controller
             }
         });
         $grid->column('status','用户状态')->switch($states);
+        $grid->column('created_at','创建时间')->date('Y-m-d H:i:s');
         return $grid;
     }
 
