@@ -11,6 +11,15 @@
     <title>@yield('title', 'cc0tuku') - CC0图库 - 免费素材图片,免费用于商业用途</title>
     <!-- 样式 -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?23bb89ec23aa3e006262078667bbf50b";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">

@@ -89,6 +89,13 @@ class UserController extends Controller
             'on'  => ['value' => 0, 'text' => '正常', 'color' => 'success'],
             'off' => ['value' => 1, 'text' => '禁用', 'color' => 'danger'],
         ];
+        $grid->email_verified_at('邮箱状态')->display(function($email_verified_at, $column){
+            if($email_verified_at){
+                return "已验证";
+            }else{
+                return "未验证";
+            }
+        });
         $grid->column('status','用户状态')->switch($states);
         return $grid;
     }
@@ -122,7 +129,7 @@ class UserController extends Controller
         $form->text('email', '邮箱');
         $form->file('avatar', '头像');
         $form->radio('status', '用户状态')->options(['0' => '正常', '1'=> '禁用'])->default('0');
-
+        $form->datetime('email_verified_at', '邮箱状态');
         return $form;
     }
 }
