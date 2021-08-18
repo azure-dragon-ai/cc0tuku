@@ -4,7 +4,9 @@
 <div class="row">
   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
     <div class="box-content text-truncate">
-        <img src="{{ $image->user->avatar }}" style="height: 60px; width:60px;" class="rounded-circle">
+        <a href="{{ route('image.user', ['id'=>$image->user->id]) }}">
+          <img src="{{ $image->user->avatar }}" style="height: 60px; width:60px;" class="rounded-circle">
+        </a>
         {{ $image->user->name }}
     </div>
   </div>
@@ -54,8 +56,13 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-top:20px;margin-bottom:20px;">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-top:20px;">
     <img src="{{ $image->newthumb640 }}" class="img-fluid">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
+      <a href="{{ route('image.license') }}"><i class="bi-check-circle-fill"></i>&nbsp;免费使用</a>
   </div>
 </div>
 @push('pbl-js')

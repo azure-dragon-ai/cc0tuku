@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Image;
+use App\Models\User;
 use Illuminate\Support\Facades\Redis;
 
 class PagesController extends Controller
@@ -47,7 +48,7 @@ class PagesController extends Controller
             $res = unserialize($res);
         } else {
             $res = Image::findOrFail($id);
-            Redis::setex($cacheKey, 86400, serialize($res));
+            Redis::setex($cacheKey, 3600*mt_rand(1,24), serialize($res));
         }
         return view('pages.show',
             [
@@ -67,4 +68,40 @@ class PagesController extends Controller
             ]
         );
     }
+
+    /**
+     * 展示用户上传的图片
+     */
+     public function user($id)
+     {
+        $cacheKey = "images:user:".$id;
+        if (Redis::exists($cacheKey)) {
+            $user = Redis::get($cacheKey);
+            $user = unserialize($user);
+        } else {
+            $user = User::findOrFail($id);
+            Redis::setex($cacheKey, 3600*mt_rand(1,24), serialize($user));
+        }
+        
+        $page = request('page');
+        if(!$page){
+            $page = 1;
+        }
+        $cacheUserKey = "images:userlist:".$id.":".$page;
+        if (Redis::exists($cacheUserKey)) {
+            $res = Redis::get($cacheUserKey);
+            $res = unserialize($res);
+        } else {
+            $res = $user->images()->orderBy('created_at', 'desc')->Released()->paginate(24,['*'],'page',$page);
+            Redis::setex($cacheUserKey, 3600*mt_rand(1,24), serialize($res));
+        }
+        
+        return view('pages.user',
+            [
+                'images' => $res,
+                'user' => $user,
+                'title' => $user->name
+            ]
+        );
+     } 
 }

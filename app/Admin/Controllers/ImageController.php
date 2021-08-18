@@ -90,14 +90,14 @@ class ImageController extends Controller
             'off' => ['value' => 0, 'text' => '撤回', 'color' => 'danger'],
         ];
         $grid->column('released','发布状态')->switch($states);
-        $grid->lens('镜头');
-        $grid->size('大小');
-        $grid->resolution('分辨率');
-        $grid->aspect_ratio('宽高比');
-        $grid->colour('颜色');
+        // $grid->lens('镜头');
+        // $grid->size('大小');
+        // $grid->resolution('分辨率');
+        // $grid->aspect_ratio('宽高比');
+        // $grid->colour('颜色');
         // $grid->user_id('user_id');
         // $grid->thumb('thumb');
-        //$grid->created_at('创建时间');
+        $grid->created_at('创建时间')->sortable();
         // $grid->updated_at(trans('admin.updated_at'));
 
         return $grid;

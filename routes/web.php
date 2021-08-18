@@ -33,3 +33,5 @@ Route::get('/photo/{id}', 'PagesController@show')->name('image.show');
 
 Route::get('/license/', 'PagesController@license')->name('image.license');
 
+Route::get('/user/{id}', 'PagesController@user')->name('image.user');
+

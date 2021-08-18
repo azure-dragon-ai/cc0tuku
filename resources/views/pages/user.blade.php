@@ -1,7 +1,22 @@
 @extends('layouts.app')
 @section('title', $title)
 @section('content')
-<div class="row masonry">
+<div class="row">
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-2 text-center">
+    <div class="box-content text-truncate">
+        <img src="{{ $user->avatar }}" style="height: 60px; width:60px;" class="rounded-circle">
+        {{ $user->name }}
+    </div>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="box-content text-truncate">
+        <a class="btn btn-outline-danger btn-sm active" role="button" aria-pressed="true">{{ $user->images->count() }}张图片</a>
+    </div>
+  </div>
+</div>
+<div class="row masonry mt-1">
     @foreach($images as $image)
       <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 item">
         <div class="box">
@@ -9,14 +24,6 @@
             <img src="{{ $image->newthumb640 }}" data-src="{{ $image->newthumb640 }}" class="img-fluid lazyload"/>
           </a>
           <div class="box-content">
-              <span class="user"> 
-                <a href="{{ route('image.user', ['id'=>$image->user->id]) }}">
-                  <img src="{{ $image->user->avatar }}" class="rounded-circle" style="height: 45px; width: 45px;">
-                </a>
-              </span>
-              <span class="post d-inline-block text-truncate" style="max-width:30%;margin: 0 auto;">
-                {{ $image->user->name }}
-              </span>
               <span class="down">
                 <i class="bi-heart-fill" style="font-size: 1.2rem;color:red;"></i>
               </span> 
