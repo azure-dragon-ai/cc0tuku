@@ -27,12 +27,13 @@
         <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
         @else
-        <li class="nav-item dropdown">
-          <a class="nav-link" href="{{ route('image.request') }}" role="button">
-              <i class="bi-plus-lg img-responsive img-circle" style="font-size: 1.2rem;color:green;"></i>
+        <li class="nav-item"><a class="nav-link" href="{{ route('image.license') }}"><strong>版权说明</strong></a></li>
+        <li class="nav-item">
+          <a class="btn btn-outline-success" href="{{ route('image.request') }}" role="button">
+              图片上传<span class="bi-arrow-up"></span>
           </a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown" style="margin-top: -5px;">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <img src="{{ Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px">
             {{ Auth::user()->name }}
