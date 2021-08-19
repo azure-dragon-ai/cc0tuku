@@ -58,7 +58,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <label for="size">大小</label>
-                                <input type="text" class="form-control" name="size" placeholder="6.60MB、273KB" autocomplete="off">
+                                <input type="text" class="form-control" name="size" id="size" placeholder="6.60MB、273KB" autocomplete="off">
                                 @error('size')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -70,7 +70,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <label for="resolution">分辨率</label>
-                                <input type="text" class="form-control" name="resolution" placeholder="3200px x 4800px" autocomplete="off">
+                                <input type="text" class="form-control" name="resolution" id="resolution" placeholder="3200px x 4800px" autocomplete="off">
                                 @error('resolution')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -126,8 +126,40 @@ $(function(){
          fileFormat = filePath.substring(filePath.lastIndexOf(".")).toLowerCase(),
          src = window.URL.createObjectURL(this.files[0]);
          $('#ImageShow').css('display','block');
-         $('#ImageShow').attr('src', src); 
+         $('#ImageShow').attr('src', src);
+         if(this.files){  
+          var f = this.files[0];  
+          var reader = new FileReader();  
+          reader.onload = function (e) {  
+              var data = e.target.result;  
+              var image = new Image();  
+              image.onload=function(){  
+                  var width = image.width;  
+                  var height = image.height;  
+                  $("#resolution").val(width+"px"+" x "+height+"px");
+              };  $("#size").val(formatFileSize(f.size));
+              image.src= data;  
+          };  
+              reader.readAsDataURL(f);  
+          }
     });
 });
+    function formatFileSize(fileSize) {
+        if (fileSize < 1024) {
+            return fileSize + 'B';
+        } else if (fileSize < (1024*1024)) {
+            var temp = fileSize / 1024;
+            temp = temp.toFixed(2);
+            return temp + 'KB';
+        } else if (fileSize < (1024*1024*1024)) {
+            var temp = fileSize / (1024*1024);
+            temp = temp.toFixed(2);
+            return temp + 'MB';
+        } else {
+            var temp = fileSize / (1024*1024*1024);
+            temp = temp.toFixed(2);
+            return temp + 'GB';
+        }
+    }
 </script>
 @endpush

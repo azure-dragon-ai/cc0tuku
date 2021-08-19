@@ -12,7 +12,7 @@
 <div class="row mt-5">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
     <div class="box-content text-truncate">
-        <a class="btn btn-outline-danger btn-sm active" role="button" aria-pressed="true">{{ $user->images->count() }}张图片</a>
+        <a class="btn btn-outline-danger btn-sm active" role="button" aria-pressed="true">{{ $user->images()->Released()->count() }}张图片</a>
     </div>
   </div>
 </div>
