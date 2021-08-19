@@ -50,9 +50,20 @@ class PagesController extends Controller
             $res = Image::findOrFail($id);
             Redis::setex($cacheKey, 3600*mt_rand(1,24), serialize($res));
         }
+
+        $cacheUserKey = "images:morelist";
+        if (Redis::exists($cacheUserKey)) {
+            $more = Redis::get($cacheUserKey);
+            $more = unserialize($more);
+        } else {
+            $more = Image::orderBy('created_at', 'desc')->Released()->limit(12)->get();
+            Redis::setex($cacheUserKey, 3600*mt_rand(1,24), serialize($more));
+        }
+
         return view('pages.show',
             [
-                'image' => $res
+                'image' => $res,
+                'more' => $more
             ]
         );
     }

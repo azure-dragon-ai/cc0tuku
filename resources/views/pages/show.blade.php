@@ -56,13 +56,29 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-top:20px;">
-    <img src="{{ $image->newthumb640 }}" class="img-fluid">
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2 text-center" style="margin-top:20px;">
+    <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;">
   </div>
 </div>
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
       <a href="{{ route('image.license') }}"><i class="bi-check-circle-fill"></i>&nbsp;免费使用</a>
+  </div>
+</div>
+<hr style="filter: progid:dximagetransform.microsoft.glow(color='red',strength=10)" width="80%" color="red" size=3>
+<div class="row">
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2 text-center">
+    <div class="row">
+      @foreach($more as $one)
+        <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-12">
+          <div class="box">
+            <a href="{{ route('image.show', ['id'=>$one->id]) }}">
+              <img src="{{ $one->newthumb640 }}" class="img-fluid" style="max-height:300px;object-fit: cover;" />
+            </a>
+          </div>
+        </div>
+      @endforeach
+    </div>
   </div>
 </div>
 @push('pbl-js')
