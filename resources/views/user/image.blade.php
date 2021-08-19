@@ -82,7 +82,7 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <label for="aspect_ratio">宽高比</label>
-                                <input type="text" class="form-control" name="aspect_ratio" placeholder="2:3 该宽高比通过上一项分辨率计算得到" autocomplete="off">
+                                <input type="text" class="form-control" name="aspect_ratio" id="aspect_ratio" placeholder="2:3 该宽高比通过上一项分辨率计算得到" autocomplete="off">
                                 @error('aspect_ratio')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -135,8 +135,10 @@ $(function(){
               var image = new Image();  
               image.onload=function(){  
                   var width = image.width;  
-                  var height = image.height;  
+                  var height = image.height;
+                  var g = gcd(width,height);
                   $("#resolution").val(width+"px"+" x "+height+"px");
+                  $("#aspect_ratio").val(width/g+":"+height/g);
               };  $("#size").val(formatFileSize(f.size));
               image.src= data;  
           };  
@@ -161,5 +163,10 @@ $(function(){
             return temp + 'GB';
         }
     }
+
+    function gcd(n,m){ 
+        if(m==0) return n; 
+        return gcd(m,n%m); 
+    } 
 </script>
 @endpush
