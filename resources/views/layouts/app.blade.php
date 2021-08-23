@@ -20,6 +20,8 @@
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0056380820309141"
+     crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app" class="{{ route_class() }}-page">
