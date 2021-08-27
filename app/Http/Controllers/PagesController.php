@@ -51,12 +51,12 @@ class PagesController extends Controller
             Redis::setex($cacheKey, 3600*mt_rand(1,24), serialize($res));
         }
 
-        $cacheUserKey = "images:morelist";
+        $cacheUserKey = "images:morelist:".$id;
         if (Redis::exists($cacheUserKey)) {
             $more = Redis::get($cacheUserKey);
             $more = unserialize($more);
         } else {
-            $more = Image::orderBy('created_at', 'desc')->Released()->limit(12)->get();
+            $more = Image::inRandomOrder()->Released()->limit(12)->get();
             Redis::setex($cacheUserKey, 3600*mt_rand(1,24), serialize($more));
         }
 
@@ -114,5 +114,21 @@ class PagesController extends Controller
                 'title' => $user->name
             ]
         );
-     } 
+     }
+
+     /**
+     * 展示keywords的图片
+     */
+     public function tag($name)
+     {
+        
+        $res = Image::where('keywords','like',"%$name%")->orderBy('created_at', 'desc')->Released()->paginate(24);
+        return view('pages.tag',
+            [
+                'images' => $res,
+                'title' => $name,
+                'tag' => $name
+            ]
+        );
+     }  
 }

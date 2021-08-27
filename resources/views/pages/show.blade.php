@@ -62,6 +62,14 @@
 </div>
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
+      标签:
+      @foreach($image->keywords as $keyword)
+        <a href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
+      @endforeach
+  </div>
+</div>
+<div class="row">
+  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
       <a href="{{ route('image.license') }}"><i class="bi-check-circle-fill"></i>&nbsp;免费使用</a>
   </div>
 </div>

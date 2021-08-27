@@ -152,4 +152,54 @@ class UserController extends Controller
         return redirect()->back()->withMessage('图片上传成功,审核通过后展示');
     }
 
+    /**
+     * 用户favorite功能
+     */ 
+
+    public function favorite(Request $request)
+    {
+        $user = Auth::user();
+        $post = Image::find($request->id);
+        if($user->hasFavorited($post)){
+            return json_encode(['msg'=>'hasFavorited']);
+        }else{
+            $user->favorite($post);
+            return json_encode(['msg'=>'success']);
+        }
+    }
+
+
+    /**
+     * 用户取消favorite功能
+     */ 
+
+    public function unfavorite(Request $request)
+    {
+        $user = Auth::user();
+        $post = Image::find($request->id);
+        if($user->hasFavorited($post)){
+            $user->unfavorite($post);
+            return json_encode(['msg'=>'unFavorited']);
+        }else{
+            return json_encode(['msg'=>'unFavorite']);
+        }
+    }
+
+    /**
+     * 用户收藏的图片列表
+     */ 
+
+    public function favorites()
+    {
+        $user = Auth::user();
+        $favortePosts = $user->getFavoriteItems(Image::class)->paginate(24);
+        return view('pages.favorite',
+            [
+                'images' => $favortePosts,
+                'title' => $user->name
+            ]
+        );
+
+    }
+    
 }

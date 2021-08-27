@@ -108,6 +108,8 @@ body {
   }
   .box .post{
     font-size: 12px;
+    line-height: 45px;
+    margin-bottom:-18.75px;
     opacity: 0;
     transition: all 0.5s ease 0s;
   }
@@ -115,21 +117,21 @@ body {
   .box .down {
     float:right;
     margin-right: 20px;
-    margin-top: 20px;
+    line-height: 45px;
     opacity: 0;
     transition: all 0.5s ease 0s;
   }
 
   .box:hover .down {
     opacity: 1;
-    margin-top: 20px;
+    line-height: 45px;
     transition-delay: 0.3s;
   }
 
   .box .fav {
     float:right;
     margin-right: 20px;
-    margin-top: 20px;
+    line-height: 45px;
     opacity: 0;
     transition: all 0.5s ease 0s;
   }
@@ -144,7 +146,7 @@ body {
 
   .box:hover .fav {
     opacity: 1;
-    margin-top: 20px;
+    line-height: 45px;
     transition-delay: 0.3s;
   }
 

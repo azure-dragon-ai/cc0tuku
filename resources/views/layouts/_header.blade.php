@@ -40,6 +40,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="{{ route('image.user', ['id'=>Auth::user()->id]) }}">我的图片</a>
+            <a class="dropdown-item" href="{{ route('image.favorite') }}">我的收藏</a>
             <a class="dropdown-item" href="{{ route('change.password.request') }}">修改密码</a>
             <a class="dropdown-item" href="{{ route('profile.request') }}">修改资料</a>
             <a class="dropdown-item" id="logout" href="#"

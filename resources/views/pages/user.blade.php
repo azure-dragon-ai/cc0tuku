@@ -23,14 +23,14 @@
           <a href="{{ route('image.show', ['id'=>$image->id]) }}">
             <img src="{{ $image->newthumb640 }}" data-src="{{ $image->newthumb640 }}" class="img-fluid lazyload"/>
           </a>
-          <div class="box-content">
+<!--           <div class="box-content">
               <span class="down">
-                <i class="bi-heart-fill" style="font-size: 1.2rem;color:red;"></i>
+                <i class="bi-heart-fill" style="font-size: 1.2rem;color:red;cursor: pointer;"></i>
               </span> 
               <span class="fav">
-                <a href="#" onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download" style="font-size: 1.2rem;"></i></a>
+                <a onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download" style="font-size: 1.2rem;cursor: pointer;"></i></a>
               </span>           
-          </div>
+          </div> -->
         </div>
       </div>
     @endforeach

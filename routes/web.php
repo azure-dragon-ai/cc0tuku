@@ -35,3 +35,10 @@ Route::get('/license/', 'PagesController@license')->name('image.license');
 
 Route::get('/user/{id}', 'PagesController@user')->name('image.user');
 
+Route::get('/favorite', 'UserController@favorites')->name('image.favorite');
+
+Route::get('/tag/{name}', 'PagesController@tag')->name('image.tag');
+
+Route::post('/favorite', 'UserController@favorite');
+
+Route::post('/unfavorite', 'UserController@unfavorite');

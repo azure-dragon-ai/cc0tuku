@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Overtrue\LaravelFavorite\Traits\Favoriteable;
 
 class Image extends Model
 {
-	
+	use Favoriteable;
 	/**
 	 * Thumb字段访问器,防止后台修改原字段后台无法删除oss图片问题
 	 */ 
@@ -43,5 +44,20 @@ class Image extends Model
     public function scopeReleased($query)
     {
         return $query->where('released', '=', 1);
+    }
+
+    /**
+     * keywords访问器
+     */ 
+    public function getKeywordsAttribute($value)
+    {
+        return explode(',', $value);
+    }
+    /**
+     * keywords修改器
+     */ 
+    public function setKeywordsAttribute($value)
+    {
+        $this->attributes['keywords'] = implode(',', $value);
     }
 }
