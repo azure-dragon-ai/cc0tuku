@@ -23,7 +23,8 @@ class Image extends Model
 
     public function shouldBeSearchable()
 	{
-    	return $this->isReleased();
+    	if($this->released) return true;
+    	return false;
 	}
 
 	/**
