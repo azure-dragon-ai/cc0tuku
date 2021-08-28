@@ -89,7 +89,7 @@
         <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-12">
           <div class="box2">
             <a href="{{ route('image.show', ['id'=>$one->id]) }}">
-              <img src="{{ $one->newthumb640 }}" class="img-fluid" style="max-height:300px;object-fit: cover;" />
+              <img src="{{ $one->newthumb640 }}" class="img-fluid"/>
             </a>
           </div>
         </div>
