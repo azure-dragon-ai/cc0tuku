@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title', $image->desc)
+@section('keywords', implode(',',$image->keywords))
 @section('content')
 <div class="row">
   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
@@ -69,9 +70,8 @@
 </div>
 <div class="row">
   <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
-      标签:
       @foreach($image->keywords as $keyword)
-        <a href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
+        <a role="button" class="btn btn-danger btn-sm" href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
       @endforeach
   </div>
 </div>
