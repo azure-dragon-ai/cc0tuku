@@ -69,15 +69,16 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
-      @foreach($image->keywords as $keyword)
-        <a role="button" class="btn btn-danger btn-sm" href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
-      @endforeach
-  </div>
-</div>
-<div class="row">
-  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center" style="margin-bottom:20px;margin-top:5px;">
-      <a href="{{ route('image.license') }}"><i class="bi-check-circle-fill"></i>&nbsp;免费使用</a>
+  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2">
+        <div class="float-left">
+          <div class="addthis_inline_share_toolbox"></div>
+        </div>
+        <div class="float-right">
+          @foreach($image->keywords as $keyword)
+            <a role="button" class="btn btn-danger btn-sm" href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
+          @endforeach
+          <a role="button" class="btn btn-warning btn-sm" href="{{ route('image.license') }}"><i class="bi-check-circle-fill"></i>&nbsp;免费使用</a>
+        </div>
   </div>
 </div>
 <hr style="filter: progid:dximagetransform.microsoft.glow(color='red',strength=10)" width="80%" color="red" size=3>
