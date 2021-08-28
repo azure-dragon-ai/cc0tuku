@@ -163,4 +163,15 @@ body {
 .dropdown>.dropdown-toggle:active {
     pointer-events: none;
 }
+
+
+.bi-download {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.bi-heart-fill {
+  @extend .bi-download;
+  color:red;
+}
   

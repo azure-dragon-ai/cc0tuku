@@ -24,10 +24,10 @@
           </a>
           <div class="box-content">
               <span class="down">
-                <i class="bi-heart-fill" style="font-size: 1.2rem;color:red;"></i>
+                <a onclick="favorite('{{ $image->id }}')"><i class="bi-heart-fill"></i></a>
               </span> 
               <span class="fav">
-                <a href="#" onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download" style="font-size: 1.2rem;"></i></a>
+                <a onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download"></i></a>
               </span>           
           </div>
         </div>
@@ -71,6 +71,30 @@
           a.click();
       }
       x.send();
+  }
+
+  function favorite(id){
+     $.ajax({
+        type: "post",
+        url: "/favorite",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({ id:id }),
+        success: function (result){
+            if(result.msg=="success"){
+                 alert('收藏成功');
+            }
+            if(result.msg=="hasFavorited"){
+                 alert('已经收藏,无需重复收藏');
+            }
+        },
+        error: function (xhr, status) {
+          if(xhr.status==401){//跳转到验证页
+            alert("请登录后再点击收藏功能");
+            location.href="/login";
+          }
+        }
+    });
   }
 </script>
 @endpush

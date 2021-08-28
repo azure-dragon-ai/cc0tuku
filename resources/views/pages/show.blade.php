@@ -57,7 +57,14 @@
 </div>
 <div class="row">
   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2 text-center" style="margin-top:20px;">
-    <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;">
+      <div class="box" style="background: #000;">
+        <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;">
+          <div class="box-content">
+                <span class="down">
+                  <a onclick="favorite('{{ $image->id }}')"><i class="bi-heart-fill"></i></a>
+                </span>         
+            </div>
+      </div>
   </div>
 </div>
 <div class="row">
@@ -105,6 +112,30 @@
           a.click();
       }
       x.send();
+  }
+
+  function favorite(id){
+     $.ajax({
+        type: "post",
+        url: "/favorite",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({ id:id }),
+        success: function (result){
+            if(result.msg=="success"){
+                 alert('收藏成功');
+            }
+            if(result.msg=="hasFavorited"){
+                 alert('已经收藏,无需重复收藏');
+            }
+        },
+        error: function (xhr, status) {
+          if(xhr.status==401){//跳转到验证页
+            alert("请登录后再点击收藏功能");
+            location.href="/login";
+          }
+        }
+    });
   }
 </script>
 @endpush

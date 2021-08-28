@@ -18,10 +18,10 @@
                 {{ $image->user->name }}
               </span>
               <span class="down">
-                <a onclick="favorite('{{ $image->id }}')"><i class="bi-heart-fill" style="font-size: 1.2rem;color:red;cursor: pointer;"></i></a>
+                <a onclick="favorite('{{ $image->id }}')"><i class="bi-heart-fill"></i></a>
               </span> 
               <span class="fav">
-                <a onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download" style="font-size: 1.2rem;cursor: pointer;"></i></a>
+                <a onclick="downImg('{{ $image->newthumb }}')"><i class="bi-download"></i></a>
               </span>           
           </div>
         </div>

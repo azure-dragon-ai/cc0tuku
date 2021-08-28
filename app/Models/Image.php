@@ -56,8 +56,8 @@ class Image extends Model
     /**
      * keywords修改器
      */ 
-    public function setKeywordsAttribute($value)
-    {
-        $this->attributes['keywords'] = implode(',', $value);
-    }
+    // public function setKeywordsAttribute($value)
+    // {
+    //     $this->attributes['keywords'] = implode(',', $value);
+    // }
 }
