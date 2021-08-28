@@ -5,10 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
 use Overtrue\LaravelFavorite\Traits\Favoriteable;
+use Laravel\Scout\Searchable;
 
 class Image extends Model
 {
-	use Favoriteable;
+	use Searchable,Favoriteable;
+
+	/**
+     * 获取模型的索引名称.
+     *
+     * @return string
+     */
+    public function searchableAs()
+    {
+        return 'images_index';
+    }
+
+    public function shouldBeSearchable()
+	{
+    	return $this->isReleased();
+	}
+
 	/**
 	 * Thumb字段访问器,防止后台修改原字段后台无法删除oss图片问题
 	 */ 

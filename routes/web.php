@@ -42,3 +42,5 @@ Route::get('/tag/{name}', 'PagesController@tag')->name('image.tag');
 Route::post('/favorite', 'UserController@favorite');
 
 Route::post('/unfavorite', 'UserController@unfavorite');
+
+Route::get('/find/{query?}', 'PagesController@find')->name('image.find');

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\User;
 use Illuminate\Support\Facades\Redis;
+use Elasticsearch\Client;
 
 class PagesController extends Controller
 {
@@ -83,8 +84,8 @@ class PagesController extends Controller
     /**
      * 展示用户上传的图片
      */
-     public function user($id)
-     {
+    public function user($id)
+    {
         $cacheKey = "images:user:".$id;
         if (Redis::exists($cacheKey)) {
             $user = Redis::get($cacheKey);
@@ -114,13 +115,13 @@ class PagesController extends Controller
                 'title' => $user->name
             ]
         );
-     }
+    }
 
-     /**
+    /**
      * 展示keywords的图片
      */
-     public function tag($name)
-     {
+    public function tag($name)
+    {
         
         $res = Image::where('keywords','like',"%$name%")->orderBy('created_at', 'desc')->Released()->paginate(24);
         return view('pages.tag',
@@ -130,5 +131,23 @@ class PagesController extends Controller
                 'tag' => $name
             ]
         );
-     }  
+    }
+
+    /**
+     * 关键词搜索
+     */
+    public function find(Request $request)
+    {
+        $query = $request->input('query');
+        $res = Image::search($query)->paginate(24);
+
+        return view('pages.search',
+            [
+                'images' => $res,
+                'title' => $query,
+                'query' => $query
+            ]
+        );
+    }
+
 }
