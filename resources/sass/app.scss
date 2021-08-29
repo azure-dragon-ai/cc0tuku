@@ -187,6 +187,10 @@ body {
   object-fit: cover;
 }
 
+.pagination{
+  @extend .justify-content-center
+}
+
 
 
 

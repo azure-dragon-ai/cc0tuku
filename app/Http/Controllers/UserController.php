@@ -192,7 +192,7 @@ class UserController extends Controller
     public function favorites()
     {
         $user = Auth::user();
-        $favortePosts = $user->getFavoriteItems(Image::class)->paginate(24);
+        $favortePosts = $user->getFavoriteItems(Image::class)->simplePaginate(24);
         return view('pages.favorite',
             [
                 'images' => $favortePosts,

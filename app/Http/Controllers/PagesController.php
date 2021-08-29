@@ -26,7 +26,7 @@ class PagesController extends Controller
             $res = Redis::get($cacheKey);
             $res = unserialize($res);
         } else {
-            $res = Image::orderBy('created_at', 'desc')->Released()->paginate(24,['*'],'page',$page);
+            $res = Image::orderBy('created_at', 'desc')->Released()->simplePaginate(24,['*'],'page',$page);
             Redis::setex($cacheKey, 3600*mt_rand(1,24), serialize($res));
         }
         return view('pages.root', 
@@ -104,7 +104,7 @@ class PagesController extends Controller
             $res = Redis::get($cacheUserKey);
             $res = unserialize($res);
         } else {
-            $res = $user->images()->orderBy('created_at', 'desc')->Released()->paginate(24,['*'],'page',$page);
+            $res = $user->images()->orderBy('created_at', 'desc')->Released()->simplePaginate(24,['*'],'page',$page);
             Redis::setex($cacheUserKey, 3600*mt_rand(1,24), serialize($res));
         }
         
@@ -123,7 +123,7 @@ class PagesController extends Controller
     public function tag($name)
     {
         
-        $res = Image::where('keywords','like',"%$name%")->orderBy('created_at', 'desc')->Released()->paginate(24);
+        $res = Image::where('keywords','like',"%$name%")->orderBy('created_at', 'desc')->Released()->simplePaginate(24);
         return view('pages.tag',
             [
                 'images' => $res,
@@ -139,7 +139,7 @@ class PagesController extends Controller
     public function find(Request $request)
     {
         $query = $request->input('query');
-        $res = Image::search($query)->paginate(24);
+        $res = Image::search($query)->simplePaginate(24);
 
         return view('pages.search',
             [
