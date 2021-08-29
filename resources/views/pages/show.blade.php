@@ -98,6 +98,7 @@
   </div>
 </div>
 @push('pbl-js')
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6129fe39ec2c82bb"></script>
 <script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/download2.js"></script>
 <script type="text/javascript">
   function downImg(){

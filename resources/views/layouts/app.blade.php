@@ -35,6 +35,5 @@
     <script src="{{ mix('js/app.js') }}"></script>
     @stack('pbl-js')
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6129fe39ec2c82bb"></script>
 </body>
 </html>
