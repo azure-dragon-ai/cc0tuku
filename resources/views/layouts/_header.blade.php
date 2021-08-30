@@ -13,10 +13,9 @@
       <ul class="navbar-nav mr-auto">
         <form action="{{ route('image.find') }}" method="get">
           <div class="input-group">
-            <input type="input" name="query" value="{{ isset($query)?$query:'' }}" class="form-control" placeholder="输入关键词搜索">
+            <input type="input" name="query" value="{{ isset($query)?$query:'' }}" class="form-control" placeholder="请输入关键词进行搜索">
             <div class="input-group-append">
-                <button type="submit" class="input-group-text btn btn-primary btn-sm">
-                    <i class="bi-search text-primary" role="img" aria-label="Search"></i>
+                <button type="submit" class="btn btn-primary">搜索
                 </button>
             </div>
           </div>

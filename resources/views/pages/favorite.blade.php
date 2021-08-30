@@ -85,8 +85,9 @@
         },
         error: function (xhr, status) {
           if(xhr.status==401){//跳转到验证页
-            alert("请登录后再点击取消收藏功能");
-            location.href="/login";
+            if(confirm('取消收藏需要登录,是否跳转到登录界面?')){
+                location.href="/login";
+            }
           }
         }
     });

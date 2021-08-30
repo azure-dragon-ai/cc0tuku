@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', $image->desc)
 @section('keywords', implode(',',$image->keywords))
+@section('description', $image->desc)
 @section('content')
 <div class="row">
   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
@@ -12,6 +13,7 @@
     </div>
   </div>
   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 text-right">
+        <button type="button" class="btn btn-danger" onclick="favorite('{{ $image->id }}')"><i class="bi-plus-circle"></i>&nbsp;加入收藏</button>
         <div class="btn-group dropdown">
           <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             免费下载
@@ -59,19 +61,16 @@
 <div class="row">
   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2 text-center" style="margin-top:20px;">
       <div class="box" style="background: #000;">
-        <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;">
-          <div class="box-content">
-                <span class="down">
-                  <a onclick="favorite('{{ $image->id }}')"><i class="bi-heart-fill"></i></a>
-                </span>         
-            </div>
+        <a class="spotlight" href="{{ $image->newthumb1280 }}">
+          <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;">
+        </a>
       </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2">
         <div class="float-left">
-          <div class="addthis_inline_share_toolbox"></div>
+          <div class="social-share" data-sites="weibo,wechat,douban,qzone,qq" data-image="{{ $image->newthumb1280 }}"></div>
         </div>
         <div class="float-right">
           @foreach($image->keywords as $keyword)
@@ -98,9 +97,19 @@
   </div>
 </div>
 @push('pbl-js')
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6129fe39ec2c82bb"></script>
+<link rel="stylesheet" href="https://cc0tuku.oss-cn-beijing.aliyuncs.com/css/share.min.css"></link>
+<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/social-share.min.js"></script>
+<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/spotlight.bundle.js"></script>
 <script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/download2.js"></script>
 <script type="text/javascript">
+  var $config = {
+      sites               : ['weibo','wechat','douban','qzone','qq'], // 启用的站点
+      disabled            : ['google', 'facebook', 'twitter'], // 禁用的站点
+      wechatQrcodeTitle   : '微信扫一扫:分享', // 微信二维码提示文字
+      wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
+  };
+  socialShare('.social-share-cs', $config);
+
   function downImg(){
       var image_url = $("input[name='inlineRadioOptions']:checked").val();
       var x = new XMLHttpRequest();
@@ -133,8 +142,9 @@
         },
         error: function (xhr, status) {
           if(xhr.status==401){//跳转到验证页
-            alert("请登录后再点击收藏功能");
-            location.href="/login";
+            if(confirm('加入收藏需要登录,是否跳转到登录界面?')){
+                location.href="/login";
+            }
           }
         }
     });

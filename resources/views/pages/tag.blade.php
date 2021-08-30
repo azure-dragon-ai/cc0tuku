@@ -4,7 +4,7 @@
 <div class="row">
   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 offset-xl-2 offset-lg-2 offset-md-2 offset-sm-2 offset-2 text-center">
     <div class="box-content text-truncate">
-        标签:{{ $tag }}
+        <button class="btn btn-danger btn-sm">{{ $tag }}</button>
     </div>
   </div>
 </div>
@@ -90,8 +90,9 @@
         },
         error: function (xhr, status) {
           if(xhr.status==401){//跳转到验证页
-            alert("请登录后再点击收藏功能");
-            location.href="/login";
+            if(confirm('加入收藏需要登录,是否跳转到登录界面?')){
+                location.href="/login";
+            }
           }
         }
     });

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="免费素材图片,可以在任何地方使用。✓ 免费用于商业用途 ✓ 无需注明归属" />
+    <meta name="description" content="@yield('description', '免费素材图片,可以在任何地方使用。✓ 免费用于商业用途 ✓ 无需注明归属')" />
     <meta name="keywords" content="@yield('keywords', '免费素材图片,设计资源,高质量,cc0,图库,cc0图库')" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Change password') }}</div>
+                <div class="card-header">密码修改</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('change.password.update') }}">
@@ -36,7 +36,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-3">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Submit') }}
+                                    确定
                                 </button>
                             </div>
                         </div>
