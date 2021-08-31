@@ -74,7 +74,7 @@
         </div>
         <div class="float-right">
           @foreach($image->keywords as $keyword)
-            <a role="button" class="btn btn-danger btn-sm" href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
+            <a role="button" class="btn btn-outline-danger btn-sm" href="{{ route('image.tag', ['name'=>$keyword]) }}">{{ $keyword }}</a>
           @endforeach
           <a role="button" class="btn btn-warning btn-sm" href="{{ route('image.license') }}"><i class="bi-check-circle-fill"></i>&nbsp;免费使用</a>
         </div>
