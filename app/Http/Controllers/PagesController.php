@@ -43,6 +43,7 @@ class PagesController extends Controller
      */
     public function show($id)
     {
+        Image::findOrFail($id)->increment('views');
         $cacheKey = "images:show:".$id;
         if (Redis::exists($cacheKey)) {
             $res = Redis::get($cacheKey);

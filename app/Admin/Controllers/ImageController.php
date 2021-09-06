@@ -98,6 +98,7 @@ class ImageController extends Controller
         // $grid->user_id('user_id');
         // $grid->thumb('thumb');
         $grid->created_at('创建时间')->sortable();
+        $grid->views('views')->sortable();
         // $grid->updated_at(trans('admin.updated_at'));
 
         return $grid;
