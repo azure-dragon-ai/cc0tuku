@@ -62,7 +62,7 @@
   <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2 text-center" style="margin-top:20px;">
       <div class="box" style="background: #000;">
         <a class="spotlight" href="{{ $image->newthumb1280 }}">
-          <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;">
+          <img src="{{ $image->newthumb1280 }}" class="img-fluid" style="width:960px;" alt="{{ $image->desc }}" title="{{ $image->desc }}">
         </a>
       </div>
   </div>
@@ -88,7 +88,7 @@
         <div class="col-xl-2 col-lg-3 col-md-3 col-sm-12 col-12">
           <div class="box2">
             <a href="{{ route('image.show', ['id'=>$one->id]) }}">
-              <img src="{{ $one->newthumb640 }}" class="img-fluid"/>
+              <img src="{{ $one->newthumb640 }}" class="img-fluid" alt="{{ $one->desc }}" title="{{ $one->desc }}"/>
             </a>
           </div>
         </div>
