@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "88195af842d7d8c626f0b8ce76383b7b",
+    "content-hash": "610f9c62fe1bd01e624c76af33faba9f",
     "packages": [
         {
             "name": "aliyuncs/oss-sdk-php",
@@ -4038,6 +4038,62 @@
                 "source": "https://github.com/reactphp/promise/tree/v2.8.0"
             },
             "time": "2020-05-12T15:16:56+00:00"
+        },
+        {
+            "name": "sharemant/laravel-admin-ext-editormd",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ShareManT/laravel-admin-ext-editormd.git",
+                "reference": "4c16621ef63e79d7d13a8b1d17c81f1c559ede1b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ShareManT/laravel-admin-ext-editormd/zipball/4c16621ef63e79d7d13a8b1d17c81f1c559ede1b",
+                "reference": "4c16621ef63e79d7d13a8b1d17c81f1c559ede1b",
+                "shasum": ""
+            },
+            "require": {
+                "encore/laravel-admin": "~1.6",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ShareManT\\EditorMd\\EditorMdServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ShareManT\\EditorMd\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "ShareManT",
+                    "email": "sharemant@163.com"
+                }
+            ],
+            "description": "EditorMd(V.1.5.0) for laravel-admin.",
+            "homepage": "https://github.com/laravel-admin-ext/editormd",
+            "keywords": [
+                "extension",
+                "laravel-admin"
+            ],
+            "support": {
+                "issues": "https://github.com/ShareManT/laravel-admin-ext-editormd/issues",
+                "source": "https://github.com/ShareManT/laravel-admin-ext-editormd/tree/master"
+            },
+            "time": "2020-07-18T02:42:27+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

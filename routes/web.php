@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PagesController@root')->name('root');
+Route::get('/', 'PagesController@index')->name('home');
+
+Route::get('/images', 'PagesController@root')->name('root');
 
 Auth::routes(['verify' => true]);
 
@@ -28,6 +30,10 @@ Route::post('/profile/', 'UserController@profile')->name('profile.update');
 Route::get('/image/', 'UserController@showImageForm')->name('image.request');
 
 Route::post('/image/', 'UserController@image')->name('image.update');
+
+Route::get('/music/', 'UserController@showMusicForm')->name('music.request');
+
+Route::post('/music/', 'UserController@music')->name('music.update');
 
 Route::get('/photo/{id}', 'PagesController@show')->name('image.show');
 

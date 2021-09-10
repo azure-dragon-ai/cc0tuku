@@ -13,5 +13,6 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('/image', 'ImageController');
+    $router->resource('/music', 'MusicController');
     $router->resource('/user', 'UserController');
 });

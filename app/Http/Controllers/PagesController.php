@@ -5,12 +5,42 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use App\Models\User;
+use App\Models\Music;
 use Illuminate\Support\Facades\Redis;
 use Elasticsearch\Client;
 
 class PagesController extends Controller
 {
-    
+
+    /**
+     * 首页展示,音图话
+     */ 
+    public function index(){
+        $m = Music::Released()->orderBy('id','desc')->first();
+        if($m===null){
+            $id = 1;
+        }else{
+            $id = $m->image_id;
+        }
+        $image = Image::findOrFail($id);
+        $music = $image->musics()->Released()->get();
+        $list = [];
+        foreach($music as $key => $row){
+            $list[$key]['name'] = $row->name;
+            $list[$key]['artist'] = $row->artist;
+            $list[$key]['cover'] = $row->cover;
+            $list[$key]['source'] = $row->source;
+            $list[$key]['desc'] = $row->desc;
+        }
+
+        return view('pages.index',
+            [
+                'image' => $image,
+                'list' => json_encode($list),
+                'title' => '首页'
+            ]
+        );
+    }
     /**
      * 首页展示
      * 
@@ -32,7 +62,7 @@ class PagesController extends Controller
         return view('pages.root', 
             [
                 'images' => $res,
-                'title' => '首页'
+                'title' => '壁纸'
             ]
         );
     }

@@ -24,7 +24,7 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="app" class="{{ route_class() }}-page">
+    <div class="{{ route_class() }}-page">
         @include('layouts._header')
         <div class="container-fluid">
             @yield('content')

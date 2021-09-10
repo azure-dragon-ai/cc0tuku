@@ -13,13 +13,18 @@
       <ul class="navbar-nav mr-auto">
         <form action="{{ route('image.find') }}" method="get">
           <div class="input-group">
-            <input type="input" name="query" value="{{ isset($query)?$query:'' }}" class="form-control" placeholder="请输入关键词进行搜索">
+            <input type="input" name="query" value="{{ isset($query)?$query:'' }}" class="form-control" autocomplete="off" placeholder="请输入关键词进行搜索">
             <div class="input-group-append">
                 <button type="submit" class="btn btn-primary">搜索
                 </button>
             </div>
           </div>
         </form>
+      </ul>
+
+      <ul class="navbar-nav">
+        <!-- <li><a class="nav-link" href="#">音图话</a></li> -->
+        <li><a class="nav-link" href="{{ route('root') }}">超清大图</a></li>
       </ul>
 
       <!-- Right Side Of Navbar -->

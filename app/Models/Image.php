@@ -78,4 +78,10 @@ class Image extends Model
     // {
     //     $this->attributes['keywords'] = implode(',', $value);
     // }
+    /**
+     * 获取图片音乐
+     */
+    public function musics(){
+        return $this->hasMany('\App\Models\Music');
+    }
 }
