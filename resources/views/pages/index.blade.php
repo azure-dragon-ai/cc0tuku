@@ -4,7 +4,7 @@
 @section('description', $image->desc)
 @section('content')
 <div class="row"  style="padding-bottom: -20px;">
-  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-xl-2 offset-lg-2 offset-md-2 text-center" style="background:rgba(0,0,0,1);filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#7F000000,endcolorstr=#7F000000);">
+  <div id="back" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 offset-xl-3 offset-lg-3 offset-md-3 text-center" style="background:rgba(0,0,0,0.05);">
           <img src="{{ $image->newthumb640 }}" class="img-fluid" alt="{{ $image->desc }}" title="{{ $image->desc }}">
   </div>
 </div>
@@ -46,15 +46,16 @@
               <div class="album-info__name">@{{ currentTrack.artist }}</div>
               <div class="album-info__track">@{{ currentTrack.name }}</div>
             </div>
-            <div class="progress__duration">@{{ duration }}</div>
+            <div class="progress__time">@{{ currentTime }}</div>
+            <div class="progress__duration" style="font-size:16px;opacity:0.7;">/@{{ duration }}</div>
           </div>
           <div class="progress__bar" @click="clickProgress">
             <div class="progress__current" :style="{ width : barWidth }"></div>
           </div>
-          <div class="progress__time">@{{ currentTime }}</div>
+          
         </div>
 
-            <div id="markdown-view" class="text-center" style="background-color:transparent">
+            <div id="markdown-view" style="background-color:transparent;padding-left:0px;">
                 <textarea style="display:none;">@{{ currentTrack.desc }}</textarea>
             </div>
 
@@ -123,6 +124,19 @@
       var View = editormd.markdownToHTML("markdown-view", {
             markdown:this.tracks[this.currentTrackIndex].desc,
         });
+      var arr = new Array();
+      arr[0] = [25,202,173];
+      arr[1] = [140,199,181];
+      arr[2] = [160,238,225];
+      arr[3] = [190,231,223];
+      arr[4] = [190,237,199];
+      arr[5] = [214,213,183];
+      arr[6] = [209,186,116];
+      arr[7] = [230,206,172];
+      arr[8] = [236,173,158];
+      arr[9] = [244,96,108];
+      var grba = arr[Math.round(Math.random()*9)];
+      $('.home-page').css('background','rgba('+grba[0]+','+grba[1]+','+grba[2]+',1)');
     }
   },
   methods: {
