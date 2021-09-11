@@ -31,6 +31,32 @@ class PagesController extends Controller
             $list[$key]['cover'] = $row->cover;
             $list[$key]['source'] = $row->source;
             $list[$key]['desc'] = $row->desc;
+            $list[$key]['auth'] = $row->user->name;
+        }
+        return view('pages.index',
+            [
+                'image' => $image,
+                'list' => json_encode($list),
+                'title' => '首页'
+            ]
+        );
+    }
+
+
+    /**
+     * 首页展示,音图话
+     */ 
+    public function music($id){
+        $image = Image::findOrFail($id);
+        $music = $image->musics()->Released()->get();
+        $list = [];
+        foreach($music as $key => $row){
+            $list[$key]['name'] = $row->name;
+            $list[$key]['artist'] = $row->artist;
+            $list[$key]['cover'] = $row->cover;
+            $list[$key]['source'] = $row->source;
+            $list[$key]['desc'] = $row->desc;
+            $list[$key]['auth'] = $row->user->name;
         }
 
         return view('pages.index',
@@ -41,8 +67,25 @@ class PagesController extends Controller
             ]
         );
     }
+
     /**
-     * 首页展示
+     * 
+     * 
+     */
+    public function list()
+    {
+        
+        $res = Image::has('musics')->orderBy('created_at', 'desc')->Released()->simplePaginate(24);
+        return view('pages.list', 
+            [
+                'images' => $res,
+                'title' => '音图话'
+            ]
+        );
+    }
+
+    /**
+     * 图片列表页展示
      * 
      */
     public function root()
@@ -62,7 +105,7 @@ class PagesController extends Controller
         return view('pages.root', 
             [
                 'images' => $res,
-                'title' => '壁纸'
+                'title' => '图片'
             ]
         );
     }
@@ -108,6 +151,18 @@ class PagesController extends Controller
         return view('pages.license',
             [
                 'title' => '版本说明'
+            ]
+        );
+    }
+
+    /**
+     * 我为图片配音乐说明
+     */ 
+    public function play()
+    {
+        return view('pages.play',
+            [
+                'title' => '玩法说明'
             ]
         );
     }

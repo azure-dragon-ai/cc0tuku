@@ -23,7 +23,7 @@
       </ul>
 
       <ul class="navbar-nav">
-        <!-- <li><a class="nav-link" href="#">音图话</a></li> -->
+        <li><a class="nav-link" href="{{ route('list') }}">音图话</a></li>
         <li><a class="nav-link" href="{{ route('root') }}">超清大图</a></li>
       </ul>
 
@@ -31,6 +31,7 @@
       <ul class="navbar-nav navbar-right">
         <!-- 登录注册链接开始 -->
         @guest
+        <li class="nav-item"><a class="nav-link" href="{{ route('image.play') }}"><strong>我为图片配音乐玩法说明</strong></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ route('image.license') }}"><strong>版权说明</strong></a></li>
         <li class="nav-item">
           <a class="btn btn-outline-success" href="{{ route('image.request') }}" role="button">

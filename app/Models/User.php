@@ -50,6 +50,10 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany('\App\Models\Image');
     }
 
+    public function musics(){
+        return $this->hasMany('\App\Models\Music');
+    }
+
     /**
     * Send the password reset notification.
     *

@@ -59,6 +59,10 @@
                 <textarea style="display:none;">@{{ currentTrack.desc }}</textarea>
             </div>
 
+            <div>
+                音乐文字 @{{ currentTrack.auth }}
+            </div>
+
       </div>
     </div>
 
@@ -98,10 +102,10 @@
    </div>
 </div>
 @push('pbl-js')
-<link rel="stylesheet" href="/editor.md/css/editormd.preview.css" />
-<script src="/editor.md/editormd.js"></script>
-<script src="/editor.md/lib/marked.min.js"></script>
-<script src="/editor.md/lib/prettify.min.js"></script>
+<link rel="stylesheet" href="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/css/editormd.preview.css" />
+<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/editormd.js"></script>
+<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/lib/marked.min.js"></script>
+<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/lib/prettify.min.js"></script>
 <script type="text/javascript">
   var app = new Vue({
   el: "#Music",
@@ -137,6 +141,7 @@
       arr[9] = [244,96,108];
       var grba = arr[Math.round(Math.random()*9)];
       $('.home-page').css('background','rgba('+grba[0]+','+grba[1]+','+grba[2]+',1)');
+      $('.music-page').css('background','rgba('+grba[0]+','+grba[1]+','+grba[2]+',1)');
     }
   },
   methods: {
