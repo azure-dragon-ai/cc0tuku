@@ -122,21 +122,21 @@ class UserController extends Controller
             $resource1920 = Intervention::make($file)->resize(1920, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->stream()->detach();
-            Storage::disk('oss')->put('thumb1920/'.$imageName,$resource1920);
+            Storage::disk('local')->put('thumb1920/'.$imageName,$resource1920);
             $model->thumb1920 = 'thumb1920/'.$imageName;
 
             //生成1280宽度图片
             $resource1280 = Intervention::make($file)->resize(1280, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->stream()->detach();
-            Storage::disk('oss')->put('thumb1280/'.$imageName,$resource1280);
+            Storage::disk('local')->put('thumb1280/'.$imageName,$resource1280);
             $model->thumb1280 = 'thumb1280/'.$imageName;
 
             //生成640宽度图片
             $resource640 = Intervention::make($file)->resize(640, null, function ($constraint) {
                 $constraint->aspectRatio();
             })->stream()->detach();
-            Storage::disk('oss')->put('thumb640/'.$imageName,$resource640);
+            Storage::disk('local')->put('thumb640/'.$imageName,$resource640);
             $model->thumb640 = 'thumb640/'.$imageName;
 
         }
