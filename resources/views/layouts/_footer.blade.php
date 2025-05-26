@@ -1,7 +1,7 @@
 <footer class="footer">
   <div class="container">
     <p class="float-left">
-      <a href="https://beian.miit.gov.cn" target="_blank">鲁ICP备2021027514号-1</a>
+      <a href="https://beian.miit.gov.cn" target="_blank">京ICP备14011022号-3</a>
     </p>
 
     <p class="float-right">
