@@ -11,17 +11,6 @@
     <title>@yield('title', 'hjh') - 天工AI</title>
     <!-- 样式 -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?23bb89ec23aa3e006262078667bbf50b";
-      var s = document.getElementsByTagName("script")[0]; 
-      s.parentNode.insertBefore(hm, s);
-    })();
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0056380820309141"
-     crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="{{ route_class() }}-page">
