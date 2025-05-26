@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="@yield('description', '免费素材图片,免费用于商业用途')" />
-    <meta name="keywords" content="@yield('keywords', '免费素材图片,免费壁纸,设计资源,高质量,cc0,图库,cc0图库')" />
+    <meta name="description" content="@yield('description', '天工AI')" />
+    <meta name="keywords" content="@yield('keywords', '天工AI')" />
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'cc0tuku') - CC0图库 - 免费素材图片,免费用于商业用途</title>
+    <title>@yield('title', 'hjh') - 天工AI</title>
     <!-- 样式 -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <script>

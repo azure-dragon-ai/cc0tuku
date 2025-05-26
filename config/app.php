@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://cc0tuku.com'),
+    'url' => env('APP_URL', 'https://tiangong2.wepromo.cn/'),
 
     'asset_url' => env('ASSET_URL', null),
 

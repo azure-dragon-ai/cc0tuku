@@ -5,7 +5,7 @@
     </p>
 
     <p class="float-right">
-      <a href="mailto:cc0tuku@163.com">联系我们</a>
+      <a href="mailto:xitongtongzhi@ai-space.net">联系我们</a>
     </p>
   </div>
 </footer>
