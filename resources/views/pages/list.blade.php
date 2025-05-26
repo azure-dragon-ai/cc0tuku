@@ -25,9 +25,9 @@
 </div>
 
 @push('pbl-js')
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/jquery.lazyload.min.js"></script>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/masonry.pkgd.min.js"></script>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/imagesloaded.pkgd.min.js"></script>
+<script src="https://tiangong2.wepromo.cn/js/jquery.lazyload.min.js"></script>
+<script src="https://tiangong2.wepromo.cn/js/masonry.pkgd.min.js"></script>
+<script src="https://tiangong2.wepromo.cn/js/imagesloaded.pkgd.min.js"></script>
 <script>
   $(function(){
       $(".lazyload").lazyload();//图片懒加载

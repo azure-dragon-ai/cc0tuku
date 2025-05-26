@@ -71,9 +71,9 @@ class User extends Authenticatable implements MustVerifyEmail
      */ 
     protected function getAvatarAttribute($value){
         if($value==null){
-            return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/avatars/default.jpg";
+            return "https://tiangong2.wepromo.cn/avatars/default.jpg";
         }else{
-            return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
+            return "https://tiangong2.wepromo.cn/".$value;
         }
     }
 

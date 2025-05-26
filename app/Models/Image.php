@@ -32,19 +32,19 @@ class Image extends Model
 	 */ 
 
 	protected function getNewThumbAttribute(){
-		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$this->thumb;
+		return "https://tiangong2.wepromo.cn/".$this->thumb;
 	}
 
 	protected function getNewThumb1920Attribute(){
-		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$this->thumb1920;
+		return "https://tiangong2.wepromo.cn/".$this->thumb1920;
 	}
 
 	protected function getNewThumb1280Attribute(){
-		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$this->thumb1280;
+		return "https://tiangong2.wepromo.cn/".$this->thumb1280;
 	}
 
 	protected function getNewThumb640Attribute(){
-		return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$this->thumb640;
+		return "https://tiangong2.wepromo.cn/".$this->thumb640;
 	}
 
 

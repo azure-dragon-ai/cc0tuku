@@ -98,10 +98,10 @@
   </div>
 </div>
 @push('pbl-js')
-<link rel="stylesheet" href="https://cc0tuku.oss-cn-beijing.aliyuncs.com/css/share.min.css"></link>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/social-share.min.js"></script>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/spotlight.bundle.js"></script>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/js/download2.js"></script>
+<link rel="stylesheet" href="https://tiangong2.wepromo.cn/css/share.min.css"></link>
+<script src="https://tiangong2.wepromo.cn/js/social-share.min.js"></script>
+<script src="https://tiangong2.wepromo.cn/js/spotlight.bundle.js"></script>
+<script src="https://tiangong2.wepromo.cn/js/download2.js"></script>
 <script type="text/javascript">
   var $config = {
       sites               : ['weibo','wechat','douban','qzone','qq'], // 启用的站点

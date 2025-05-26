@@ -105,8 +105,8 @@
 </div>
 @endsection
 @push('pbl-js')
-<link rel="stylesheet" href="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/css/editormd.min.css" />
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/editormd.min.js"></script>
+<link rel="stylesheet" href="https://tiangong2.wepromo.cn/editor.md/css/editormd.min.css" />
+<script src="https://tiangong2.wepromo.cn/editor.md/editormd.min.js"></script>
 <script type="text/javascript">
     $(function() {
         var editor = editormd("editor", {

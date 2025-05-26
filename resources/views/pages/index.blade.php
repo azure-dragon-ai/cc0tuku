@@ -102,10 +102,10 @@
    </div>
 </div>
 @push('pbl-js')
-<link rel="stylesheet" href="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/css/editormd.preview.css" />
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/editormd.js"></script>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/lib/marked.min.js"></script>
-<script src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/editor.md/lib/prettify.min.js"></script>
+<link rel="stylesheet" href="https://tiangong2.wepromo.cn/editor.md/css/editormd.preview.css" />
+<script src="https://tiangong2.wepromo.cn/editor.md/editormd.js"></script>
+<script src="https://tiangong2.wepromo.cn/editor.md/lib/marked.min.js"></script>
+<script src="https://tiangong2.wepromo.cn/editor.md/lib/prettify.min.js"></script>
 <script type="text/javascript">
   var app = new Vue({
   el: "#Music",

@@ -40,7 +40,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/images/working.jpg" alt="working">
+                <img src="https://tiangong2.wepromo.cn/images/working.jpg" alt="working">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -55,7 +55,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/images/ads.jpg" alt="ads">
+                <img src="https://tiangong2.wepromo.cn/images/ads.jpg" alt="ads">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -73,7 +73,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/images/message.jpg" alt="message">
+                <img src="https://tiangong2.wepromo.cn/images/message.jpg" alt="message">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -88,7 +88,7 @@
           <div class="card mb-3" style="max-width: 540px;">
             <div class="row no-gutters">
               <div class="col-md-4">
-                <img src="https://cc0tuku.oss-cn-beijing.aliyuncs.com/images/apps.jpg" alt="apps">
+                <img src="https://tiangong2.wepromo.cn/images/apps.jpg" alt="apps">
               </div>
               <div class="col-md-8">
                 <div class="card-body">

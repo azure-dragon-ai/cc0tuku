@@ -16,11 +16,11 @@ class Music extends Model
    }
 
    protected function getCoverAttribute($value){
-      return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
+      return "https://tiangong2.wepromo.cn/".$value;
    }
 
    protected function getSourceAttribute($value){
-      return "https://cc0tuku.oss-cn-beijing.aliyuncs.com/".$value;
+      return "https://tiangong2.wepromo.cn/".$value;
    }
 
     /**
